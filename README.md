@@ -60,8 +60,12 @@ sg-small-mybatis-18：二级缓存
 1.搭建基础工程流程
 ![image](https://github.com/personhh/sg-small-Mybatis/assets/139620514/79510f5c-7375-404b-a514-a9edac5d5b95)
 
+————————————————————————————————————————
+
 2.数据源池化技术底层
 ![image](https://github.com/personhh/sg-small-Mybatis/assets/139620514/52184a49-eef6-4135-9d27-2177bd892baa)
+
+————————————————————————————————————————
 
 3.反射流程
 ![image](https://github.com/personhh/sg-small-Mybatis/assets/139620514/3bc6dbc4-e33f-40a8-8f76-ab552b34ada0)
