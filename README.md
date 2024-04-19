@@ -63,13 +63,13 @@ sg-small-mybatis-18：二级缓存
 2.数据源池化技术底层
 ![image](https://github.com/personhh/sg-small-Mybatis/assets/139620514/52184a49-eef6-4135-9d27-2177bd892baa)
 
-4.反射流程
+3.反射流程
 ![image](https://github.com/personhh/sg-small-Mybatis/assets/139620514/3bc6dbc4-e33f-40a8-8f76-ab552b34ada0)
 
-5.基础功能点实现流程
+4.基础功能点实现流程
 ![image](https://github.com/personhh/sg-small-Mybatis/assets/139620514/7b89a8eb-19fb-4af0-ba04-071a69712095)
 
-6.主要扩展点之一二级缓存流程
+5.主要扩展点之一二级缓存流程
 ![image](https://github.com/personhh/sg-small-Mybatis/assets/139620514/d5ceaa08-f398-4554-985d-b05c7d7222a7)
 
 还有很多流程图，为了读者方便，我就贴上几个主要的
