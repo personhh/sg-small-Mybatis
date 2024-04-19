@@ -1,0 +1,65 @@
+package com.cps.mybatis.executor;
+
+import com.cps.mybatis.executor.statement.StatementHandler;
+import com.cps.mybatis.mapping.BoundSql;
+import com.cps.mybatis.mapping.MappedStatement;
+import com.cps.mybatis.session.Configuration;
+import com.cps.mybatis.session.ResultHandler;
+import com.cps.mybatis.session.defaults.RowBounds;
+import com.cps.mybatis.transaction.Transaction;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+
+/**
+ * @author cps
+ * @description: 简单执行器实现
+ * @date 2024/1/19 13:50
+ * @OtherDescription: Other things
+ */
+public class SimpleExecutor extends BaseExecutor{
+
+    public SimpleExecutor(Configuration configuration, Transaction transaction) {
+        super(configuration, transaction);
+    }
+
+    @Override
+    protected <E> List<E> doQuery(MappedStatement ms, Object parameter, ResultHandler resultHandler, RowBounds rowBounds, BoundSql boundSql) {
+        Statement stmt = null;
+        try {
+            Configuration configuration = ms.getConfiguration();//获取配置类
+            //创建语句处理器
+            StatementHandler handler = configuration.newStatementHandler(this, ms, parameter, resultHandler, rowBounds, boundSql);
+            //通过语句处理器准备语句
+            stmt = prepareStatements(handler);
+            return handler.query(stmt, resultHandler);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public int doUpdate(MappedStatement ms, Object parameter) throws Exception {
+        Statement stmt = null;
+        try{
+            Configuration configuration = ms.getConfiguration();
+            StatementHandler handler = configuration.newStatementHandler(this,ms,parameter,null, RowBounds.DEFAULT,null);
+            stmt = prepareStatements(handler);
+            return handler.update(stmt);
+        }finally {
+            closeStatement(stmt);
+        }
+    }
+
+    private Statement prepareStatements(StatementHandler handler) throws Exception {
+        Statement stmt;
+        Connection connection = transaction.getConnection();
+        //准备语句
+        stmt = handler.prepare(connection);
+        handler.parameterize(stmt);
+        return stmt;
+    }
+}
