@@ -77,3 +77,14 @@ sg-small-mybatis-18：二级缓存
 ![image](https://github.com/personhh/sg-small-Mybatis/assets/139620514/d5ceaa08-f398-4554-985d-b05c7d7222a7)
 
 还有很多流程图，为了读者方便，我就贴上几个主要的
+
+
+**测试效果展示
+1.我们只对最后一个项目模块进行测试，因为它包含了这个工程所有的功能点
+测试图如下：
+![截屏2024-04-19 15 44 06](https://github.com/personhh/sg-small-Mybatis/assets/139620514/62969f30-f3dc-4525-917d-4449533f9e6b)
+
+2.结果图如下：
+![截屏2024-04-19 15 46 54](https://github.com/personhh/sg-small-Mybatis/assets/139620514/d39b402c-db74-4c4f-8993-3b7b8ee44d28)
+
+
